@@ -8,16 +8,15 @@
 
 ## Overview
 ### Description
-[Description of your app]
+Allows users to find nutritional information of food items by taking their photograph. 
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Health
+- **Mobile:** This application will be primarily developed for mobile usage only.
+- **Story:** Allows users identify the nutritional value of a food item by snapping its photo.
+- **Market:** All people who  manage their foods intake routine.
+- **Habit:** The target audience will use this app on a daily basis to track their food nutrition value
+- **Scope:** We want to create a complete ecosystem in the future where the user just needs to snap a photo of their food items and everything else will be autocompleted by the application.
 
 ## Product Spec
 
@@ -25,39 +24,46 @@
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User registration.
+* User login.
+* User snaps a photo of the food item.
+* User is displayed the type of food item.
+* User is displayed the nutritional value of the food item based on photo.
+* User can search for food item nutritional information without photo.
+* Profile page for the user.
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* History of the photos takes.
+* History of the search results.
+* Settings (Accesibility, Notification, General, etc.)
+* User can add nutritional information of foods to expand the database.
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login
+   * User Login.
+* Register
+   * User registration.
+* Photo
+    * User is displayed the type of food item.
+    * User is displayed the nutritional value of the food item based on photo.
+    * User can search for food item nutritional information without photo.
+* Profile
+    * Profile page of the user.
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Photo
+* Profile
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Forced Log-in -> Registration if no log in is available
+* Auto-Login -> Photo screen with option to logout
+* After Photo taken -> Popup shows nutrition information 
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
