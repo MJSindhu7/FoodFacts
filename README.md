@@ -8,7 +8,7 @@
 
 ## Overview
 ### Description
-Allows users to find nutritional information of food items by taking their photograph. 
+Allows users to find nutritional information of food items by taking a photograph. 
 
 ### App Evaluation
 - **Category:** Health
@@ -16,7 +16,7 @@ Allows users to find nutritional information of food items by taking their photo
 - **Story:** Allows users identify the nutritional value of a food item by snapping its photo.
 - **Market:** All people who  manage their foods intake routine.
 - **Habit:** The target audience will use this app on a daily basis to track their food nutrition value
-- **Scope:** We want to create a complete ecosystem in the future where the user just needs to snap a photo of their food items and everything else will be autocompleted by the application.
+- **Scope:** We want to create a complete ecosystem in the future where the user just needs to snap a photo of their food items and everything else will be autocompleted by the application to maintain a track of user's intake.
 
 ## Product Spec
 
