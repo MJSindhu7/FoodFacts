@@ -66,12 +66,16 @@ Allows users to find nutritional information of food items by taking a photograp
 * After Photo taken -> Popup shows nutrition information 
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
+[Add a picture of all the screens with connections here]
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+[Add pictures of individual screens with screen name here]
+<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
 ### [BONUS] Interactive Prototype
+[Add the interactive Gif here]
+<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
 ## Schema 
 [This section will be completed in Unit 9]
