@@ -74,7 +74,7 @@ Optional:
 <img src="https://github.com/MJSindhu7/FoodFacts/blob/main/MockScreens.png" width=600>
 
 ### [BONUS] Interactive Prototype
-<img src="http://g.recordit.co/ROilVfnxXs.gif" width=600>
+<img src="http://g.recordit.co/ROilVfnxXs.gif" width=300>
 
 ## Schema 
 [This section will be completed in Unit 9]
