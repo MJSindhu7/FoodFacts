@@ -72,7 +72,7 @@ Optional:
 
 ### [BONUS] Digital Wireframes & Mockups
 [Add pictures of individual screens with screen name here]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://github.com/MJSindhu7/FoodFacts/blob/main/MockScreens.png" width=600>
 
 ### [BONUS] Interactive Prototype
 [Add the interactive Gif here]
