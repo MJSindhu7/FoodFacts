@@ -68,8 +68,7 @@ Optional:
 * After Photo taken -> Popup shows nutrition information 
 
 ## Wireframes
-[Add a picture of all the screens with connections here]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="https://github.com/MJSindhu7/FoodFacts/blob/main/Connecctions.png">
 
 ### [BONUS] Digital Wireframes & Mockups
 [Add pictures of individual screens with screen name here]
