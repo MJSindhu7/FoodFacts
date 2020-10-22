@@ -66,8 +66,6 @@ Optional:
 * Forced Log-in -> Registration if no log in is available
 * Auto-Login -> Photo screen with option to logout
 * After Photo taken -> Popup shows nutrition information 
-* Search for an item -> Popup the nutrition information
-* Favorites -> Shows the list of favorited item
 
 ## Wireframes
 <img src="https://github.com/MJSindhu7/FoodFacts/blob/main/Connecctions.png">
@@ -78,7 +76,7 @@ Optional:
 
 ### [BONUS] Interactive Prototype
 [Add the interactive Gif here]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="http://g.recordit.co/ROilVfnxXs.gif" width=600>
 
 ## Schema 
 [This section will be completed in Unit 9]
