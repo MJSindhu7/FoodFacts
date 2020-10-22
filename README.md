@@ -50,8 +50,14 @@ Allows users to find nutritional information of food items by taking a photograp
 * Nutrition
     * User is displayed the nutritional value of the food item based on search/photo.
     * User can favourite a food.
+
+Optional:
 * Favorite
-    * Favorite food items are displayed in a favorite screen
+    * Favorite food items are displayed in a favorite screen.
+* Profile
+    * User profile page.
+* Search History
+    * App maintains a history of all the photos taken and the search results.
 
 ### 3. Navigation
 
