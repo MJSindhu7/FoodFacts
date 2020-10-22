@@ -27,30 +27,28 @@ Allows users to find nutritional information of food items by taking a photograp
 * User registration.
 * User login.
 * User snaps a photo of the food item.
-* User is displayed the type of food item.
-* User is displayed the nutritional value of the food item based on photo.
 * User can search for food item nutritional information without photo.
-* Profile page for the user.
+* User is displayed the type of food item and the nutritional value based on the search/photo.
 
 **Optional Nice-to-have Stories**
-
-* History of the photos takes.
-* History of the search results.
+* User can favourite a food.
+* App maintains a history of all the photos taken and the search results
 * Settings (Accesibility, Notification, General, etc.)
-* User can add nutritional information of foods to expand the database.
+* User can add nutritional information of foods to expand the application database.
 
 ### 2. Screen Archetypes
-
+* Home
 * Login
    * User Login.
 * Register
    * User registration.
-* Photo
-    * User is displayed the type of food item.
-    * User is displayed the nutritional value of the food item based on photo.
+* Main
+    * User snaps a photo of the food item.
     * User can search for food item nutritional information without photo.
-* Profile
-    * Profile page of the user.
+* Nutrition
+    * User is displayed the nutritional value of the food item based on search/photo.
+    * User can favourite a food.
+* Favourite
 
 ### 3. Navigation
 
