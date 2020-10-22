@@ -44,7 +44,7 @@ Allows users to find nutritional information of food items by taking a photograp
    * User Login.
 * Sign up
    * User signup.
-* Main
+* Main 
     * User snaps a photo of the food item.
     * User can search for food item nutritional information without photo.
 * Nutrition
@@ -64,14 +64,16 @@ Optional:
 **Tab Navigation** (Tab to Screen)
 
 Optional:
-* Main
+* Main 
 * Profile
 
 **Flow Navigation** (Screen to Screen)
 
 * Forced Log-in -> Registration if no log in is available
-* Auto-Login -> Photo screen with option to logout
+* Auto-Login -> Main screen with option to logout
 * After Photo taken -> Popup shows nutrition information 
+* Search item -> Popup shows nutrition information
+* Favorites -> Shows the list of items favorited -> Shows nutrition information for the selected item
 
 ## Wireframes
 <img src="https://github.com/MJSindhu7/FoodFacts/blob/main/Connecctions.png">
