@@ -71,11 +71,9 @@ Optional:
 <img src="https://github.com/MJSindhu7/FoodFacts/blob/main/Connecctions.png">
 
 ### [BONUS] Digital Wireframes & Mockups
-[Add pictures of individual screens with screen name here]
 <img src="https://github.com/MJSindhu7/FoodFacts/blob/main/MockScreens.png" width=600>
 
 ### [BONUS] Interactive Prototype
-[Add the interactive Gif here]
 <img src="http://g.recordit.co/ROilVfnxXs.gif" width=600>
 
 ## Schema 
