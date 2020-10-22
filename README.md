@@ -66,6 +66,8 @@ Optional:
 * Forced Log-in -> Registration if no log in is available
 * Auto-Login -> Photo screen with option to logout
 * After Photo taken -> Popup shows nutrition information 
+* Search for an item -> Popup the nutrition information
+* Favorites -> Shows the list of favorited item
 
 ## Wireframes
 <img src="https://github.com/MJSindhu7/FoodFacts/blob/main/Connecctions.png">
