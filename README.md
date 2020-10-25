@@ -85,9 +85,35 @@ Optional:
 <img src="http://g.recordit.co/ROilVfnxXs.gif" width=300>
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
 [Add table of models]
+
+User
+
+| Property      | Type          | Description                           |
+| ------------- | ------------- | -----                                 |
+| UserID        | String        | unique id for the user                |
+| Password      | String        | corresponding password for the user   | 
+| Email         | String        | email Id of the user                  |
+
+Nutrition
+
+| Property     	   | Type         	| Description 				|
+| -------------	   |--------------| ----------------------------	|
+| foodID             | String         | unique ID for the food item     |
+| foodCategory  | String         | category of food     |
+| brand               | String         | brand of the food    |
+| nutrients          | object        | nutrients of the food item|
+
+Favorites
+
+| Property     	| Type         	| Description 				|
+| -------------	|--------------	| ----------------------------	|
+| foodID      	| String      	| unique ID for the food item	|
+| foodArray      | ArrayList     	| ArrayList that holds foodID	|
+
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
