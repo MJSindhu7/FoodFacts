@@ -87,9 +87,8 @@ Optional:
 ## Schema 
 
 ### Models
-[Add table of models]
 
-User
+* User
 
 | Property      | Type          | Description                           |
 | ------------- | ------------- | -----                                 |
@@ -97,7 +96,7 @@ User
 | Password      | String        | corresponding password for the user   | 
 | Email         | String        | email Id of the user                  |
 
-Nutrition
+* Nutrition
 
 | Property     	   | Type         	| Description 				|
 | -------------	   |--------------| ----------------------------	|
@@ -106,7 +105,7 @@ Nutrition
 | brand               | String         | brand of the food    |
 | nutrients          | object        | nutrients of the food item|
 
-Favorites
+* Favorites
 
 | Property     	| Type         	| Description 				|
 | -------------	|--------------	| ----------------------------	|
