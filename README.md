@@ -110,11 +110,73 @@ Favorites
 
 | Property     	| Type         	| Description 				|
 | -------------	|--------------	| ----------------------------	|
-| foodID      	| String      	| unique ID for the food item	|
-| foodArray      | ArrayList     	| ArrayList that holds foodID	|
+| UserID      	| String      	| unique ID for the food item	|
+| foodArray      | ArrayList     	| arrayList that holds foodID	|
+| image          | 	File | favorited food item image |
 
 
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+**List of network requests by screen**
+* User
+     * (Read/GET) Login:
+        ```
+        let username = usernameField.text!
+                let password = passwordField.text!
+                PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
+                    if user != nil {
+                        print("Login successful")
+                    }
+                    else{
+                        print("Error: \(error?.localizedDescription)")
+                    }
+                }
+         ```
+
+     * (Create/POST) Sign Up user information
+        ```
+        guard let user = PFUser.current() else {
+            print("Failed to get user")
+        }
+        let user = PFObject(className: "User")
+        user["UserID"] = "Jhon"
+        user["Password"] = "234!@"
+        user["Email"] = "john@gmail.com"
+
+        user.saveInBackground { (success, error) in
+            if success {
+                print("Successfully saved user!")
+            }
+            else {
+                print("Failed to create user!")
+            }
+        ```
+
+* Nutrition
+    * (Read/GET) Get the nutrition information of a food item
+    * (Create/POST) 
+   
+* Favories
+    * (Read/GET) Get the favorited items of a user
+    * (Update/PUT) When ever favorited, add that item into the list
+
+
+**[OPTIONAL:] End points planning to use**
+
+* Reference - <https://www.logmeal.es/nutritional-information/>
+
+      ```
+          # Single/Several Dishes Detection
+      url = 'https://api.logmeal.es/v2/recognition/complete'
+      resp = requests.post(url,
+                          files={'image': open(img, 'r')},
+                          headers=headers)
+
+      # Nutritional information
+      url = 'https://api.logmeal.es/v2/recipe/nutritionalInfo'
+      resp = requests.post(url,
+                          data={'imageId': resp.json()['imageId']},
+                          headers=headers)
+
+      print(resp.json()) # display nutritional info
+      
+      ```
