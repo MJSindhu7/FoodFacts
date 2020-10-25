@@ -163,7 +163,7 @@ Optional:
 
 * Reference - <https://www.logmeal.es/nutritional-information/>
 
-      ```
+    ```
           # Single/Several Dishes Detection
       url = 'https://api.logmeal.es/v2/recognition/complete'
       resp = requests.post(url,
@@ -177,5 +177,5 @@ Optional:
                           headers=headers)
 
       print(resp.json()) # display nutritional info
-      
-      ```
+     
+    ```
