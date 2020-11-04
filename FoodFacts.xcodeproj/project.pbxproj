@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5CDC016097AD3C18E063A65F /* Pods_FoodFacts_FoodFactsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC11A10AC843818ACC7E474 /* Pods_FoodFacts_FoodFactsUITests.framework */; };
+		B6D47CC3255251A200B037D9 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D47CC2255251A200B037D9 /* CameraViewController.swift */; };
+		B6D47CC5255259C200B037D9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D47CC4255259C200B037D9 /* SearchViewController.swift */; };
 		C23D48FC0CEB80F149D29427 /* Pods_FoodFacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C654BCE607032388D9F50C /* Pods_FoodFacts.framework */; };
 		E48752DB254452A10099A816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48752DA254452A10099A816 /* AppDelegate.swift */; };
 		E48752E2254452A10099A816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48752E0254452A10099A816 /* Main.storyboard */; };
@@ -46,6 +48,8 @@
 		6739E22AB485D03F5A4C3F53 /* Pods-FoodFactsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFactsTests.release.xcconfig"; path = "Target Support Files/Pods-FoodFactsTests/Pods-FoodFactsTests.release.xcconfig"; sourceTree = "<group>"; };
 		817D8BA0357C919900CA2100 /* Pods-FoodFacts-FoodFactsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFacts-FoodFactsUITests.release.xcconfig"; path = "Target Support Files/Pods-FoodFacts-FoodFactsUITests/Pods-FoodFacts-FoodFactsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9CC11A10AC843818ACC7E474 /* Pods_FoodFacts_FoodFactsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodFacts_FoodFactsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6D47CC2255251A200B037D9 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		B6D47CC4255259C200B037D9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C2E3277E98B43AE779AAE4EA /* Pods-FoodFacts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFacts.release.xcconfig"; path = "Target Support Files/Pods-FoodFacts/Pods-FoodFacts.release.xcconfig"; sourceTree = "<group>"; };
 		DD1903ABB2A653BFC5D1D999 /* Pods-FoodFactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFactsTests.debug.xcconfig"; path = "Target Support Files/Pods-FoodFactsTests/Pods-FoodFactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE4E2BECC3DF24CD7618380F /* Pods_FoodFactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodFactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +162,8 @@
 				E4EB1D4125445E6900D3A9BB /* SignupViewController.swift */,
 				E4EB1D4325445EF800D3A9BB /* MainViewController.swift */,
 				E4F9305D2545DFEB00DE5A8F /* MenuTableViewController.swift */,
+				B6D47CC2255251A200B037D9 /* CameraViewController.swift */,
+				B6D47CC4255259C200B037D9 /* SearchViewController.swift */,
 			);
 			path = FoodFacts;
 			sourceTree = "<group>";
@@ -422,8 +428,10 @@
 				E4EB1D4025445E3C00D3A9BB /* LoginViewController.swift in Sources */,
 				E4F9305E2545DFEB00DE5A8F /* MenuTableViewController.swift in Sources */,
 				E48752DB254452A10099A816 /* AppDelegate.swift in Sources */,
+				B6D47CC5255259C200B037D9 /* SearchViewController.swift in Sources */,
 				E4EB1D4225445E6900D3A9BB /* SignupViewController.swift in Sources */,
 				E4EB1D3E254455E900D3A9BB /* HomeViewController.swift in Sources */,
+				B6D47CC3255251A200B037D9 /* CameraViewController.swift in Sources */,
 				E4EB1D4425445EF800D3A9BB /* MainViewController.swift in Sources */,
 				E4EB1D462544659D00D3A9BB /* SceneDelegate.swift in Sources */,
 			);
