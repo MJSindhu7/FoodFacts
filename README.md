@@ -24,19 +24,19 @@ Allows users to find nutritional information of food items by taking a photograp
 
 **Required Must-have Stories**
 
-* User signup.
-* User login.
-* User snaps a photo of the food item.
-* User can search for food item nutritional information without photo.
-* User is displayed the type of food item and the nutritional value based on the search/photo.
+* [X] User signup.
+* [X] User login.
+* [X] User snaps a photo of the food item.
+* [ ] User can search for food item nutritional information without photo.
+* [ ] User is displayed the type of food item and the nutritional value based on the search/photo.
 
 **Optional Nice-to-have Stories**
-* User can favourite a food.
-* Favorite food items are displayed in a favorite screen.
-* User profile page.
-* App maintains a history of all the photos taken and the search results.
-* Settings (Accesibility, Notification, General, etc.)
-* User can add nutritional information of foods to expand the application database.
+* [ ] User can favourite a food.
+* [ ] Favorite food items are displayed in a favorite screen.
+* [ ] User profile page.
+* [ ] App maintains a history of all the photos taken and the search results.
+* [ ] Settings (Accesibility, Notification, General, etc.)
+* [ ] User can add nutritional information of foods to expand the application database.
 
 ### 2. Screen Archetypes
 * Home
@@ -179,3 +179,8 @@ Optional:
       print(resp.json()) # display nutritional info
      
     ```
+
+## Prototype Gifs
+* Unit - 10
+
+<img src='https://recordit.co/QUhT2yKDJ4.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
