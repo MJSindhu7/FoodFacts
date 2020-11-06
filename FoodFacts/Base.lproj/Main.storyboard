@@ -363,10 +363,10 @@
             </objects>
             <point key="canvasLocation" x="2344.9275362318845" y="93.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="0i7-TB-ikN">
             <objects>
-                <viewController id="7wZ-rC-ym1" sceneMemberID="viewController">
+                <viewController id="7wZ-rC-ym1" customClass="SearchViewController" customModule="FoodFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eEv-qW-LTT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,9 +376,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="searchedItem:" destination="Svl-AE-ory" eventType="editingDidEnd" id="7Ty-Rr-y2D"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwa-Ce-4n1">
                                 <rect key="frame" x="216" y="174" width="142" height="42"/>
@@ -388,6 +385,9 @@
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCancel:" destination="7wZ-rC-ym1" eventType="touchUpInside" id="nJY-cM-bl8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ij-6c-HSg">
                                 <rect key="frame" x="40" y="174" width="148" height="42"/>
@@ -399,6 +399,7 @@
                                     <color key="titleShadowColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="getDetails:" destination="7wZ-rC-ym1" eventType="touchUpInside" id="IeJ-Ha-xEc"/>
                                     <action selector="getDetails:" destination="Svl-AE-ory" eventType="touchUpInside" id="LUd-Zk-vVg"/>
                                 </connections>
                             </button>
@@ -406,6 +407,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="hIf-1Z-axl"/>
                     </view>
+                    <connections>
+                        <outlet property="itemFeild" destination="a99-Y9-jml" id="HSa-gf-Lfv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnA-rg-ygd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Svl-AE-ory" userLabel="Exit" sceneMemberID="exit"/>
@@ -436,6 +440,9 @@
                                 <state key="normal" title="Get Nutrition Details">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onGetDetails:" destination="E1i-8U-HAt" eventType="touchUpInside" id="CTv-1z-KeT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -443,7 +450,6 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="FZ4-57-YgK" id="6r9-YQ-aQh"/>
-                        <outlet property="onSubmitButton" destination="ECA-s2-Auj" id="6HX-2o-DwZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JwE-ig-JEz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

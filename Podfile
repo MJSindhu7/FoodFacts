@@ -8,6 +8,7 @@ target 'FoodFacts' do
   # Pods for FoodFacts
   pod "Parse"
   pod "AlamofireImage"
+  pod "Alamofire"
   pod "SideMenu"
 
   target 'FoodFactsTests' do

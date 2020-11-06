@@ -10,14 +10,51 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    @IBAction func searchedItem(_ sender: Any) {
-    }
+    func sendRequest(_ url: String, parameters: [String: String], completion: @escaping ([String: Any]?, Error?) -> Void) {
+        //print("INNNNNNN")
+       var components = URLComponents(string: url)!
+       components.queryItems = parameters.map { (key, value) in
+       URLQueryItem(name: key, value: value)
+       }
+       components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+       let request = URLRequest(url: components.url!)
+       let task = URLSession.shared.dataTask(with: request) { data, response, error in
+           guard let data = data,
+               let response = response as? HTTPURLResponse,
+               (200 ..< 300) ~= response.statusCode,
+               error == nil else {
+                   completion(nil, error)
+                   return
+           }
+           let responseObject = (try? JSONSerialization.jsonObject(with: data)) as? [String: Any]
+           completion(responseObject, nil)
+       }
+       task.resume()
+        
+       }
+    
+    
+    @IBOutlet weak var itemFeild: UITextField!
     
     @IBAction func getDetails(_ sender: Any) {
+        let myUrl = "https://api.nal.usda.gov/fdc/v1/foods/search?"
+         let item = String(itemFeild.text!)
+        print(item)
+        sendRequest(myUrl, parameters: ["query": item, "api_key": ""]){ responseObject, error in
+        guard let responseObject = responseObject, error == nil else {
+            print(error ?? "Unknown error")
+            return
+            
+    }
+        print(responseObject)
+    }
     }
     
+   
+    
     @IBAction func onCancel(_ sender: Any) {
-        //self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+        //print("Hey on cancel!")
     }
     override func viewDidLoad() {
         super.viewDidLoad()

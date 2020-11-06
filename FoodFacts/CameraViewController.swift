@@ -13,7 +13,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
 
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var onSubmitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +20,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onGetDetails(_ sender: Any) {
+        print("Get Nutrition Details")
+    }
     @IBAction func onCameraButton(_ sender: Any) {
         let picker = UIImagePickerController()
         picker.delegate = self
