@@ -361,7 +361,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xeF-Pz-day" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2344.9275362318845" y="93.75"/>
+            <point key="canvasLocation" x="2207" y="94"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="0i7-TB-ikN">
@@ -459,7 +459,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4205.7971014492759" y="93.75"/>
+            <point key="canvasLocation" x="4204" y="94"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

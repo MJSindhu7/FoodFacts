@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class MenuTableViewController: UITableViewController {
 
@@ -32,6 +33,23 @@ class MenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            print("Home")
+//            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+//            let mainView = storyBoard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+//            self.navigationController?.pushViewController(mainView, animated: true)
+        }
+        
+        if indexPath.row == 1 {
+            print("Favourites")
+            
+        }
+        
+        if indexPath.row == 2 {
+            print("Logout")
+            PFUser.logOut()
+            view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

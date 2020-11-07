@@ -24,11 +24,5 @@ class MainViewController: UIViewController {
     
     @IBAction func onTapMenu(){
         present(menu!, animated: true)
-        
-    }
-    
-    @IBAction func onLogout(_ sender: Any) {
-        PFUser.logOut()
-        dismiss(animated: true, completion: nil)
     }
 }
