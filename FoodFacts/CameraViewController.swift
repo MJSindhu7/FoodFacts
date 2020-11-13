@@ -12,6 +12,7 @@ import AlamofireImage
 class CameraViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var foodLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -44,15 +45,47 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         let scaledImage = image.af_imageScaled(to: size)
         imageView.image = scaledImage
         dismiss(animated: true, completion: nil)
+        getFoodFromImage(image: image) { (food) in
+            print(food)
+            self.foodLabel.text = food
+        }
     }
-    /*
-    // MARK: - Navigation
+    
+    func getFoodFromImage(image: UIImage, completion: @escaping (String) -> Void){
+        
+        let group = DispatchGroup()
+            
+        var food = "Recognition Failed"
+        let boundary = UUID().uuidString
+        let api_token = "3712982aeace39bc1f0792cabfb2caab27c7da5c"
+        let url = URL(string: "https://api.logmeal.es/v2/recognition/dish")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(api_token)", forHTTPHeaderField: "Authorization")
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        var data = Data()
+        data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+        data.append("Content-Disposition: form-data; name=\"image\"; filename=\"image.jpeg\"\r\n".data(using: .utf8)!)
+        data.append("Content-Type: image/png\r\n\r\n".data(using: .utf8)!)
+        data.append(image.jpegData(compressionQuality: 1)!)
+        data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+        
+        group.enter()
+        URLSession.shared.uploadTask(with: request, from: data){data,
+            response, error in
+            if let data = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]{
+                if let recognitionOptions = try? data["recognition_results"] as! [[String: Any]] {
+                    if recognitionOptions.count > 0{
+                        DispatchQueue.main.async {completion(recognitionOptions[0]["name"] as! String)}
+                    }
+                }
+                
+            }
+            if let httpResponse = response as? HTTPURLResponse {
+                print(httpResponse.statusCode)
+            }
+            group.leave()
+        }.resume()
     }
-    */
-
 }
