@@ -181,6 +181,9 @@ Optional:
     ```
 
 ## Prototype Gifs
-* Unit - 10
 
+### Update 1
 <img src='https://recordit.co/QUhT2yKDJ4.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+### Update 2
+<img src='http://g.recordit.co/tzUMpPGyqL.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
