@@ -188,3 +188,7 @@ Optional:
 
 ### Update 2
 <img src='http://g.recordit.co/tzUMpPGyqL.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+### Update 3
+<img src='http://g.recordit.co/PiHNwsJlRl.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
