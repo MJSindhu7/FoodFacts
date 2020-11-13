@@ -27,8 +27,9 @@ Allows users to find nutritional information of food items by taking a photograp
 * [X] User signup.
 * [X] User login.
 * [X] User snaps a photo of the food item.
+* [X] User is displayed the type of food item
 * [X] User can search for food item nutritional information without photo.
-* [ ] User is displayed the type of food item and the nutritional value based on the search/photo.
+* [ ] User is displayed the nutritional value based on the search/photo.
 
 **Optional Nice-to-have Stories**
 * [ ] User can favourite a food.
