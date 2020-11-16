@@ -23,6 +23,17 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     @IBAction func onGetDetails(_ sender: Any) {
         print("Get Nutrition Details")
+//        sendRequest(myUrl, parameters: ["query": item, "api_key": "yi6bnd5eaUd3rE9P5SvOPOKzYbfedJz4ZEzLRc60"]){ responseObject, error in
+//               guard let responseObject = responseObject, error == nil else {
+//                   print(error ?? "Unknown error")
+//                   return
+//           }
+//        }
+//        getFoodFromImage(image: imageView.image!){_ in
+//            responseObject
+//
+//            print(responseObject)
+//        }
     }
     @IBAction func onCameraButton(_ sender: Any) {
         let picker = UIImagePickerController()
@@ -76,9 +87,13 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             response, error in
             if let data = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]{
                 if let recognitionOptions = try? data["recognition_results"] as! [[String: Any]] {
+                    if recognitionOptions.count == 0{
+                        DispatchQueue.main.async {completion("Unknown" as! String)}
+                    }
                     if recognitionOptions.count > 0{
                         DispatchQueue.main.async {completion(recognitionOptions[0]["name"] as! String)}
                     }
+                   
                 }
                 
             }

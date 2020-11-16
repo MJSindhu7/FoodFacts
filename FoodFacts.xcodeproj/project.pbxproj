@@ -13,6 +13,8 @@
 		B6D47CC3255251A200B037D9 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D47CC2255251A200B037D9 /* CameraViewController.swift */; };
 		B6D47CC5255259C200B037D9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D47CC4255259C200B037D9 /* SearchViewController.swift */; };
 		C23D48FC0CEB80F149D29427 /* Pods_FoodFacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4C654BCE607032388D9F50C /* Pods_FoodFacts.framework */; };
+		C30E30F125619BEA0090F0EE /* NutrientViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E30F025619BEA0090F0EE /* NutrientViewViewController.swift */; };
+		C30E30F32561D0D60090F0EE /* IngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30E30F22561D0D60090F0EE /* IngredientTableViewCell.swift */; };
 		E48752DB254452A10099A816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48752DA254452A10099A816 /* AppDelegate.swift */; };
 		E48752E2254452A10099A816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E48752E0254452A10099A816 /* Main.storyboard */; };
 		E48752E4254452A30099A816 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E48752E3254452A30099A816 /* Assets.xcassets */; };
@@ -55,6 +57,8 @@
 		B6D47CC2255251A200B037D9 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		B6D47CC4255259C200B037D9 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		C2E3277E98B43AE779AAE4EA /* Pods-FoodFacts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFacts.release.xcconfig"; path = "Target Support Files/Pods-FoodFacts/Pods-FoodFacts.release.xcconfig"; sourceTree = "<group>"; };
+		C30E30F025619BEA0090F0EE /* NutrientViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutrientViewViewController.swift; sourceTree = "<group>"; };
+		C30E30F22561D0D60090F0EE /* IngredientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientTableViewCell.swift; sourceTree = "<group>"; };
 		DD1903ABB2A653BFC5D1D999 /* Pods-FoodFactsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFactsTests.debug.xcconfig"; path = "Target Support Files/Pods-FoodFactsTests/Pods-FoodFactsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DE4E2BECC3DF24CD7618380F /* Pods_FoodFactsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FoodFactsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28569FDBD16C220D54053E7 /* Pods-FoodFacts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodFacts.debug.xcconfig"; path = "Target Support Files/Pods-FoodFacts/Pods-FoodFacts.debug.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +174,8 @@
 				B6D47CC4255259C200B037D9 /* SearchViewController.swift */,
 				41D3046A255DBBB30086BB83 /* FavoritesViewController.swift */,
 				41D3046C255DC69C0086BB83 /* FavoritesCell.swift */,
+				C30E30F025619BEA0090F0EE /* NutrientViewViewController.swift */,
+				C30E30F22561D0D60090F0EE /* IngredientTableViewCell.swift */,
 			);
 			path = FoodFacts;
 			sourceTree = "<group>";
@@ -435,7 +441,9 @@
 				E4F9305E2545DFEB00DE5A8F /* MenuTableViewController.swift in Sources */,
 				E48752DB254452A10099A816 /* AppDelegate.swift in Sources */,
 				B6D47CC5255259C200B037D9 /* SearchViewController.swift in Sources */,
+				C30E30F125619BEA0090F0EE /* NutrientViewViewController.swift in Sources */,
 				E4EB1D4225445E6900D3A9BB /* SignupViewController.swift in Sources */,
+				C30E30F32561D0D60090F0EE /* IngredientTableViewCell.swift in Sources */,
 				41D3046B255DBBB30086BB83 /* FavoritesViewController.swift in Sources */,
 				E4EB1D3E254455E900D3A9BB /* HomeViewController.swift in Sources */,
 				B6D47CC3255251A200B037D9 /* CameraViewController.swift in Sources */,

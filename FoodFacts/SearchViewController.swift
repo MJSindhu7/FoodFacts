@@ -9,7 +9,9 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
+var nutrients = [NSDictionary]()
+    var fnutries = [String : Float64]()
+    var foodNutrition = [NSDictionary]()
     func sendRequest(_ url: String, parameters: [String: String], completion: @escaping ([String: Any]?, Error?) -> Void) {
         //print("INNNNNNN")
        var components = URLComponents(string: url)!
@@ -37,6 +39,7 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var itemFeild: UITextField!
     
     @IBAction func getDetails(_ sender: Any) {
+        
         let myUrl = "https://api.nal.usda.gov/fdc/v1/foods/search?"
          let item = String(itemFeild.text!)
         print(item)
@@ -44,13 +47,27 @@ class SearchViewController: UIViewController {
         guard let responseObject = responseObject, error == nil else {
             print(error ?? "Unknown error")
             return
+    }
             
+//                print(responseObject)
+           
+           self.nutrients = responseObject["foods"] as! [NSDictionary]
+            let nutrient = self.nutrients[0]
+            // var foodNutrition = [NSDictionary]()
+            self.foodNutrition = nutrient["foodNutrients"] as! [NSDictionary]
+            print(self.foodNutrition)
+         
+        
     }
-        print(responseObject)
-    }
+        
     }
     
-   
+    @IBAction func showDetails(_ sender: Any) {
+        print("in show details")
+        print(foodNutrition)
+        self.performSegue(withIdentifier: "NutritionSegue", sender: self)
+    }
+    
     
     @IBAction func onCancel(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -63,14 +80,19 @@ class SearchViewController: UIViewController {
     }
     
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "NutritionSegue"){
+            let destVC = segue.destination as! NutrientViewViewController
+           destVC.nutrients = foodNutrition
+            destVC.itemName = itemFeild.text!
+        }
     }
-    */
+   
 
 }
