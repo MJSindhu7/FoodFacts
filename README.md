@@ -190,5 +190,5 @@ Optional:
 <img src='http://g.recordit.co/tzUMpPGyqL.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 ### Update 3
-<img src='http://g.recordit.co/PiHNwsJlRl.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/SXXUASdEE8.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
