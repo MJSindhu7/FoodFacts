@@ -639,6 +639,7 @@
                     <connections>
                         <outlet property="foodLabel" destination="xsk-rq-9gt" id="Yt1-kp-hku"/>
                         <outlet property="imageView" destination="FZ4-57-YgK" id="6r9-YQ-aQh"/>
+                        <segue destination="eHp-3U-buZ" kind="show" identifier="NutritionSegue2" id="BWN-YV-yXO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JwE-ig-JEz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -690,6 +691,7 @@
         <image name="square.and.arrow.up.on.square" catalog="system" width="58" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="BWN-YV-yXO"/>
         <segue reference="gZV-5U-V81"/>
         <segue reference="GFX-HZ-Aug"/>
     </inferredMetricsTieBreakers>

@@ -14,6 +14,8 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var foodLabel: UILabel!
     
+    var nutrients = [NSDictionary]()
+    var foodNutrition = [NSDictionary]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,18 +24,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func onGetDetails(_ sender: Any) {
-        print("Get Nutrition Details")
-//        sendRequest(myUrl, parameters: ["query": item, "api_key": "yi6bnd5eaUd3rE9P5SvOPOKzYbfedJz4ZEzLRc60"]){ responseObject, error in
-//               guard let responseObject = responseObject, error == nil else {
-//                   print(error ?? "Unknown error")
-//                   return
-//           }
-//        }
-//        getFoodFromImage(image: imageView.image!){_ in
-//            responseObject
-//
-//            print(responseObject)
-//        }
+        print("in Get Nutrition Details")
+        print(foodNutrition)
+    self.performSegue(withIdentifier: "NutritionSegue2", sender: self)
     }
     @IBAction func onCameraButton(_ sender: Any) {
         let picker = UIImagePickerController()
@@ -60,6 +53,27 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             print(food)
             self.foodLabel.text = food
         }
+         let myUrl = "https://api.nal.usda.gov/fdc/v1/foods/search?"
+        let item = self.foodLabel.text
+                print(item)
+        sendRequest(myUrl, parameters: ["query": item!, "api_key": "0W3hjLg8oNFCqQmj0H0uJcgc9yEgrZ8ZrTFVPc1E"]){ responseObject, error in
+                guard let responseObject = responseObject, error == nil else {
+                    print(error ?? "Unknown error")
+                    return
+            }
+                    
+                    //  print(responseObject)
+                   
+                   self.nutrients = responseObject["foods"] as! [NSDictionary]
+                    let nutrient = self.nutrients[0]
+                    // var foodNutrition = [NSDictionary]()
+                    self.foodNutrition = nutrient["foodNutrients"] as! [NSDictionary]
+            print("inside get")
+                    print(self.foodNutrition)
+                 
+                
+            }
+        
     }
     
     func getFoodFromImage(image: UIImage, completion: @escaping (String) -> Void){
@@ -87,9 +101,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             response, error in
             if let data = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]{
                 if let recognitionOptions = try? data["recognition_results"] as! [[String: Any]] {
-                    if recognitionOptions.count == 0{
-                        DispatchQueue.main.async {completion("Unknown" as! String)}
-                    }
+                    
                     if recognitionOptions.count > 0{
                         DispatchQueue.main.async {completion(recognitionOptions[0]["name"] as! String)}
                     }
@@ -103,4 +115,37 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             group.leave()
         }.resume()
     }
+    
+    func sendRequest(_ url: String, parameters: [String: String], completion: @escaping ([String: Any]?, Error?) -> Void) {
+     //print("INNNNNNN")
+    var components = URLComponents(string: url)!
+    components.queryItems = parameters.map { (key, value) in
+    URLQueryItem(name: key, value: value)
+    }
+    components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
+    let request = URLRequest(url: components.url!)
+    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        guard let data = data,
+            let response = response as? HTTPURLResponse,
+            (200 ..< 300) ~= response.statusCode,
+            error == nil else {
+                completion(nil, error)
+                return
+        }
+        let responseObject = (try? JSONSerialization.jsonObject(with: data)) as? [String: Any]
+        completion(responseObject, nil)
+    }
+    task.resume()
+     
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           // Get the new view controller using segue.destination.
+           // Pass the selected object to the new view controller.
+           if(segue.identifier == "NutritionSegue2"){
+               let destVC = segue.destination as! NutrientViewViewController
+              destVC.nutrients = foodNutrition
+            destVC.itemName = foodLabel.text!
+           }
+       }
 }
