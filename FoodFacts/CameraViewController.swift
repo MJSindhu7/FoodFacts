@@ -140,12 +140,13 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           // Get the new view controller using segue.destination.
-           // Pass the selected object to the new view controller.
-           if(segue.identifier == "NutritionSegue2"){
-               let destVC = segue.destination as! NutrientViewViewController
-              destVC.nutrients = foodNutrition
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        if(segue.identifier == "NutritionSegue2"){
+            let destVC = segue.destination as! NutrientViewViewController
+            destVC.nutrients = foodNutrition
             destVC.itemName = foodLabel.text!
-           }
-       }
+            destVC.image = imageView.image!
+        }
+    }
 }

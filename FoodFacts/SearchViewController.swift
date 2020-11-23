@@ -37,13 +37,14 @@ var nutrients = [NSDictionary]()
     
     
     @IBOutlet weak var itemFeild: UITextField!
-    
+
     @IBAction func getDetails(_ sender: Any) {
         
         let myUrl = "https://api.nal.usda.gov/fdc/v1/foods/search?"
          let item = String(itemFeild.text!)
         print(item)
-        sendRequest(myUrl, parameters: ["query": item, "api_key": ""]){ responseObject, error in
+        let api = "CFr1PwAuR2HAg9DTdImTKG3hL0pdHZglDotDrBq3"
+        sendRequest(myUrl, parameters: ["query": item, "api_key": api]){ responseObject, error in
         guard let responseObject = responseObject, error == nil else {
             print(error ?? "Unknown error")
             return

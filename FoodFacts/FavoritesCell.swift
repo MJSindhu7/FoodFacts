@@ -11,7 +11,8 @@ import UIKit
 class FavoritesCell: UITableViewCell {
 
     @IBOutlet weak var photoView: UIImageView!
-    @IBOutlet weak var imageLabel: UILabel!
+    @IBOutlet weak var foodLabel: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +24,4 @@ class FavoritesCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

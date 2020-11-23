@@ -41,7 +41,7 @@ class MenuTableViewController: UITableViewController {
         }
         
         if indexPath.row == 1 {
-            print("Favourites")
+            print("Favorites")
             let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
             let favoritesViewController = storyBoard.instantiateViewController(withIdentifier: "FavoritesViewController") as! FavoritesViewController
             self.present(favoritesViewController, animated: true, completion: nil)
