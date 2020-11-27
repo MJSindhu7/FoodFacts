@@ -183,16 +183,13 @@ Optional:
 
 ## Prototype Gifs
 
-### Update 1
+### Login functionality
 <img src='https://recordit.co/QUhT2yKDJ4.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-### Update 2
-<img src='http://g.recordit.co/tzUMpPGyqL.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-### Update 3
+### Search Nutritional info
 <img src='http://g.recordit.co/FVKEWIV9cw.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-### Update 4
+### Identify food type and get nutritional info
 <img src='http://g.recordit.co/DJxa7hNIWO.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
