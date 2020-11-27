@@ -192,4 +192,7 @@ Optional:
 ### Identify food type and get nutritional info
 <img src='http://g.recordit.co/DJxa7hNIWO.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
+### Favoriting a food item
+<img src='https://recordit.co/KoqweYptW3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
 
