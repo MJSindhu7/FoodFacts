@@ -89,9 +89,8 @@ var nutrients = [NSDictionary]()
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if(segue.identifier == "NutritionSegue"){
-            let destVC = segue.destination as! NutrientViewViewController
-           destVC.nutrients = foodNutrition
-            destVC.itemName = itemFeild.text!
+            let destVC = segue.destination as! NutrientViewController
+            destVC.nutrients = foodNutrition
         }
     }
    
