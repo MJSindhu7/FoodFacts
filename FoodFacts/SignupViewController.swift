@@ -34,7 +34,7 @@ class SignupViewController: UIViewController {
                 self.performSegue(withIdentifier: "signupSegue", sender: nil)
             }
             else{
-                print("Error: \(error?.localizedDescription)")
+                print(error!.localizedDescription)
             }
         }
     }

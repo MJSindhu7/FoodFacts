@@ -11,19 +11,38 @@ import Parse
 import SideMenu
 import AlamofireImage
 
-class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MainViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UISearchBarDelegate {
     
     var menu: SideMenuNavigationController?
     var foodImage: UIImage!
+    var food: String!
     
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+        searchBar.isHidden = true
         menu = SideMenuNavigationController(rootViewController: MenuTableViewController())
         menu?.leftSide = true
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+    }
+    
+    @IBAction func onSearchButton(_ sender: Any) {
+        searchBar.isHidden = false
+        searchBar.becomeFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.food = searchBar.text!
+        performSegue(withIdentifier: "searchDetails", sender: nil)
+    }
+    
+    @IBAction func onTapOutside(_ sender: Any) {
+        view.endEditing(true)
+        searchBar.isHidden = true
     }
     
     @IBAction func onTapMenu(){
@@ -62,54 +81,10 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             destination.foodImage = self.foodImage
             destination.requestType = "identify_fetch"
         }
+        if(segue.identifier == "searchDetails"){
+            let destination = segue.destination as! NutrientViewController
+            destination.foodSearch = self.food
+            destination.requestType = "search_details"
+        }
     }
 }
-        
-        
-//         let myUrl = "https://api.nal.usda.gov/fdc/v1/foods/search?"
-//        let item = self.food
-//                print(item)
-//        sendRequest(myUrl, parameters: ["query": item!, "api_key": "0W3hjLg8oNFCqQmj0H0uJcgc9yEgrZ8ZrTFVPc1E"]){ responseObject, error in
-//                guard let responseObject = responseObject, error == nil else {
-//                    print(error ?? "Unknown error")
-//                    return
-//            }
-//
-//                    //  print(responseObject)
-//
-//                   self.nutrients = responseObject["foods"] as! [NSDictionary]
-//                    let nutrient = self.nutrients[0]
-//                    // var foodNutrition = [NSDictionary]()
-//                    self.foodNutrition = nutrient["foodNutrients"] as! [NSDictionary]
-//            print("inside get")
-//                    print(self.foodNutrition)
-//
-//
-//            }
-    
-    
-//
-//    func sendRequest(_ url: String, parameters: [String: String], completion: @escaping ([String: Any]?, Error?) -> Void) {
-//     //print("INNNNNNN")
-//    var components = URLComponents(string: url)!
-//    components.queryItems = parameters.map { (key, value) in
-//    URLQueryItem(name: key, value: value)
-//    }
-//    components.percentEncodedQuery = components.percentEncodedQuery?.replacingOccurrences(of: "+", with: "%2B")
-//    let request = URLRequest(url: components.url!)
-//    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//        guard let data = data,
-//            let response = response as? HTTPURLResponse,
-//            (200 ..< 300) ~= response.statusCode,
-//            error == nil else {
-//                completion(nil, error)
-//                return
-//        }
-//        let responseObject = (try? JSONSerialization.jsonObject(with: data)) as? [String: Any]
-//        completion(responseObject, nil)
-//    }
-//    task.resume()
-//
-//    }
-    
-
