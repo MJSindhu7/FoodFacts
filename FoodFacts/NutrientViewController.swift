@@ -60,7 +60,6 @@ class NutrientViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         if requestType == "search_details" {
-            self.imageView.removeFromSuperview()
             foodName.text = foodSearch.capitalizingFirstLetter()
             self.statusLabel.text = "fetching nutrition details..."
             APIManager.getNutritionDetails(foodItem: foodSearch, onSuccess: { (nutrients) in

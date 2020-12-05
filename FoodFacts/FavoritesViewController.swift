@@ -8,13 +8,15 @@
 
 import UIKit
 import Parse
+import SideMenu
 
 class FavoritesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var menu: SideMenuNavigationController?
     var fav_items = [PFObject]()
     var selectedPost: PFObject!
+    var food: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,26 +24,37 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.delegate = self
         tableView.dataSource = self
 
-        // Do any additional setup after loading the view.
+        menu = SideMenuNavigationController(rootViewController: MenuTableViewController())
+        menu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+    }
+    
+    @IBAction func onTapMenu(){
+        present(menu!, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fav_items.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoritesCell") as! FavoritesCell
-        //cell.delegate = self as! favoriteCellDelegate
-        //cell.indexPath = indexPath
-        
         let post = fav_items[indexPath.row]
         cell.foodLabel.text = (post["name"] as! String)
-        
+
         let imageFile = post["image"] as! PFFileObject
         let urlString = imageFile.url!
         let url = URL(string: urlString)!
-        
+
         cell.photoView.af.setImage(withURL: url)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let post = fav_items[indexPath.row]
+        self.food = (post["name"] as! String)
+        performSegue(withIdentifier: "favGetDetails", sender: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,14 +71,6 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             }
         }
     }
-    
-//    func tableView(tableView: UITableView, didSelectRowAt indexPath: NSIndexPath) {
-//        print("Inside did selete row at index path")
-////        let post = fav_items[indexPath.section]
-////
-////        print("Post namr: \(post["name"])")
-////        print("selected cell \(indexPath.row)")
-//    }
     
     @IBAction func onDeleteButton(_ sender: UIButton) {
         let buttonPostion = sender.convert(sender.bounds.origin, to: tableView)
@@ -86,48 +91,12 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             tableView.reloadData()
         }
     }
-
-//    func getDetails(sender: Any?) {
-//        let myUrl = "https://api.nal.usda.gov/fdc/v1/foods/search?"
-//        let api = "CFr1PwAuR2HAg9DTdImTKG3hL0pdHZglDotDrBq3"
-//        let search = SearchViewController()
-//
-//        let cell = sender as! UITableViewCell
-//        let indexPath = tableView.indexPath(for: cell)!
-//        let post = fav_items[indexPath.row]
-//        let item = (post["name"] as! String)
-//
-//        search.sendRequest(myUrl, parameters: ["query": item, "api_key": api]){ responseObject, error in
-//        guard let responseObject = responseObject, error == nil else {
-//            print(error ?? "Unknown error")
-//            return
-//            }
-//    }
-//    }
-/*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        
-//        let cell = sender as! UITableViewCell
-//        let indexPath = tableView.indexPath(for: cell)!
-//
-//        let food = fav_items[indexPath.row]
-//        let foodName = food["name"] as! String
-//        print(foodName)
-//        let destVC = segue.destination as! NutrientViewViewController
-        //destVC.itemObj = food
-//        destVC.itemName = food["name"] as! String
-//        if(segue.identifier == "NutritionSegue2"){
-//            let destVC = segue.destination as! NutrientViewViewController
-//            destVC.nutrients = foodNutrition
-//            destVC.itemName = foodLabel.text!
-//            destVC.image = imageView.image!
-//        }
+        if(segue.identifier == "favGetDetails"){
+            let destination = segue.destination as! NutrientViewController
+            destination.foodSearch = self.food
+            destination.requestType = "search_details"
+        }
     }
-*/
-
 }

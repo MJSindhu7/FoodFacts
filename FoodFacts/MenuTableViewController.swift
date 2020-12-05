@@ -33,25 +33,26 @@ class MenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            print("Home")
-//            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//            let mainView = storyBoard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
-//            self.navigationController?.pushViewController(mainView, animated: true)
-        }
-        
-        if indexPath.row == 1 {
-            print("Favorites")
-            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-            let favoritesViewController = storyBoard.instantiateViewController(withIdentifier: "FavoritesViewController") as! FavoritesViewController
-            self.present(favoritesViewController, animated: true, completion: nil)
-        }
-        
-        if indexPath.row == 2 {
+        let storyBoard = UIStoryboard(name: "Main", bundle:nil)
+        switch(indexPath.row){
+        case 0:
+            let homeVC = storyBoard.instantiateViewController(withIdentifier: "MainNavigationController") as! UINavigationController
+            self.navigationController?.pushViewController(homeVC.viewControllers.first!, animated: false)
+            break
+            
+        case 1:
+            let favVC = storyBoard.instantiateViewController(withIdentifier: "FavNavigationController") as! UINavigationController
+            self.navigationController?.pushViewController(favVC.viewControllers.first!, animated: false)
+            break
+            
+        case 2:
             print("Logout")
             PFUser.logOut()
-            view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+            self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+            break
+            
+        default:
+            break
         }
-        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
