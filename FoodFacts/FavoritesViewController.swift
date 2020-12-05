@@ -60,6 +60,10 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        getFavData()
+    }
+    
+    func getFavData(){
         let query = PFQuery(className:"Favorites")
         query.includeKey("user")
         query.limit = 20
@@ -80,15 +84,17 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             let query = PFQuery(className:"Favorites")
             query.whereKey("name", equalTo: (post["name"] as! String))
             query.getFirstObjectInBackground(block: {(parseObject: PFObject?, error: Error?) -> Void in
-                print("inside get object")
                 if error != nil {
-                    print(error)
+                    print(error!)
                 } else if parseObject != nil {
                     parseObject?.deleteInBackground()
                     print("item deleted")
+                    DispatchQueue.main.async{
+                        self.getFavData()
+                        self.tableView.reloadData()
+                    }
                 }
             })
-            tableView.reloadData()
         }
     }
     
