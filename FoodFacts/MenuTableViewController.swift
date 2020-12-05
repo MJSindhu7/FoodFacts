@@ -48,7 +48,8 @@ class MenuTableViewController: UITableViewController {
         case 2:
             print("Logout")
             PFUser.logOut()
-            self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+            let loginVC = storyBoard.instantiateViewController(withIdentifier: "LoginViewController")
+            UIApplication.shared.keyWindow?.rootViewController = loginVC
             break
             
         default:

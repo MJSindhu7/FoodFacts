@@ -128,7 +128,7 @@
         <!--Login View Controller-->
         <scene sceneID="hbL-58-X6w">
             <objects>
-                <viewController id="y01-te-hNf" customClass="LoginViewController" customModule="FoodFacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="y01-te-hNf" customClass="LoginViewController" customModule="FoodFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uRd-nf-bdX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -535,7 +535,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="AGe-Sz-tLs"/>
-        <segue reference="gZV-5U-V81"/>
+        <segue reference="tnA-7c-Y3P"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Email_Icon" width="50" height="50"/>
