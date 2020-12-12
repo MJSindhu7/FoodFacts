@@ -91,7 +91,10 @@ class NutrientViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientTableViewCell", for: indexPath) as! IngredientTableViewCell
         let nutrient = nutrients[indexPath.row]
         cell.ingredientName.text = (nutrient["nutrientName"] as! String)
-        cell.ingredientValue.text = "\(nutrient["value"] as! NSNumber) \(nutrient["unitName"] as! String)"
+        let ingredientValue = nutrient["value"] as! Double
+        cell.ingredientValue.text = "\(String(format: "%.2f", ingredientValue))"
+        let ingredientUnit = nutrient["unitName"] as! String
+        cell.ingredientUnit.text = ingredientUnit.lowercased()
         return cell
     }
     
