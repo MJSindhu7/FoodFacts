@@ -16,7 +16,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround() 
+        self.hideKeyboardWhenTappedAround()
+        
+        usernameField.attributedPlaceholder =
+        NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        passwordField.attributedPlaceholder =
+        NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
     @IBAction func onBack(_ sender: Any) {
@@ -29,9 +34,13 @@ class LoginViewController: UIViewController {
         
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if user != nil {
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.success)
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
             }
             else{
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.error)
                 print("Error: \(error!.localizedDescription)")
             }
         }

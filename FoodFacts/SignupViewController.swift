@@ -18,6 +18,13 @@ class SignupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
+        
+        usernameField.attributedPlaceholder =
+        NSAttributedString(string: "username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        emailField.attributedPlaceholder =
+        NSAttributedString(string: "email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        passwordField.attributedPlaceholder =
+        NSAttributedString(string: "password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
     
     @IBAction func onBack(_ sender: Any) {
