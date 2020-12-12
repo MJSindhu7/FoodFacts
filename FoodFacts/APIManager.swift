@@ -34,10 +34,15 @@ class APIManager {
                 DispatchQueue.main.async {onFailure(error!.localizedDescription)}
             }
             if let data = try? JSONSerialization.jsonObject(with: data!, options: []) as? [String: Any]{
-                if let recognitionOptions = try? data["recognition_results"] as! [[String: Any]] {
-                    if recognitionOptions.count > 0{
-                        DispatchQueue.main.async {onSuccess(recognitionOptions[0]["name"] as! String)}
+                if data.keys.contains("recognition_results"){
+                    if let recognitionOptions = try? data["recognition_results"] as! [[String: Any]] {
+                        if recognitionOptions.count > 0{
+                            DispatchQueue.main.async {onSuccess(recognitionOptions[0]["name"] as! String)}
+                        }
                     }
+                }
+                else{
+                    DispatchQueue.main.async {onFailure("Could not identify item!")}
                 }
             }
         }.resume()
