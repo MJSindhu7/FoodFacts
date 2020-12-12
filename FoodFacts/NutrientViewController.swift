@@ -17,6 +17,9 @@ class NutrientViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     
+    @IBOutlet weak var imageHeight: NSLayoutConstraint!
+    @IBOutlet weak var imageWidth: NSLayoutConstraint!
+    
     var nutrients = [NSDictionary]()
     var foodImage: UIImage!
     var requestType: String!
@@ -60,6 +63,9 @@ class NutrientViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         if requestType == "search_details" {
+            imageWidth.constant = 0
+            imageHeight.constant = 0
+            view.layoutIfNeeded()
             foodName.text = foodSearch.capitalizingFirstLetter()
             self.statusLabel.text = "fetching nutrition details..."
             APIManager.getNutritionDetails(foodItem: foodSearch, onSuccess: { (nutrients) in
