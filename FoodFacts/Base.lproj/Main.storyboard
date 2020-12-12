@@ -301,7 +301,7 @@
                 <navigationController storyboardIdentifier="MainNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ViZ-D5-APW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Tq6-Hj-MOm"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eL2-jD-fBA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="Back Arrow" backIndicatorTransitionMaskImage="Back Arrow" id="eL2-jD-fBA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.96048754449999996" green="0.49334084989999999" blue="0.1736822724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -489,6 +489,12 @@
                         <viewLayoutGuide key="safeArea" id="LqL-7h-Me8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nutrition" id="JKX-nT-n3q">
+                        <barButtonItem key="leftBarButtonItem" image="Back Arrow" id="tPu-Vp-ZHW">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onBackButton:" destination="eHp-3U-buZ" id="eSc-gU-ha2"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="heart" catalog="system" id="grF-QK-UnF">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -516,7 +522,7 @@
                 <navigationController storyboardIdentifier="FavNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="1OS-o7-8Mn" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="5by-j5-c7g"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j1E-J3-THN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="Back Arrow" backIndicatorTransitionMaskImage="Back Arrow" id="j1E-J3-THN">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.96048754449999996" green="0.49334084989999999" blue="0.1736822724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -540,6 +546,7 @@
         <segue reference="tnA-7c-Y3P"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Back Arrow" width="14" height="25.5"/>
         <image name="Email_Icon" width="50" height="50"/>
         <image name="HomeBackground" width="500" height="750"/>
         <image name="Icon-1" width="50" height="50"/>

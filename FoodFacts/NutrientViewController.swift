@@ -125,6 +125,11 @@ class NutrientViewController: UIViewController, UITableViewDataSource, UITableVi
             favButton.image = UIImage(systemName:"heart")
         }
     }
+    
+    @IBAction func onBackButton(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension String {
